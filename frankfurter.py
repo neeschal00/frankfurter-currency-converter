@@ -27,12 +27,10 @@ def get_currencies_list() -> list:
     if status_code == 0:
         return None
     
-    currency_list = [str(key)+" - "+str(value) for key,value in currency_json.items()]
+    # currency_list = [str(key)+" - "+str(value) for key,value in currency_json.items()]
 
-    return currency_list
+    return list(currency_json.keys())
 
-
-    
 
     
 
@@ -59,6 +57,24 @@ def get_latest_rates(from_currency, to_currency, amount):
     float
         Latest FX conversion rate or None in case of error
     """
+
+    converter_url = BASE_URL+ f"/latest?amount={amount}&from={from_currency}&to={to_currency}"
+
+    status_code, response = get_url(converter_url)
+
+    if status_code == 0:
+        return None
+    
+    l_date = None 
+    conversion_rate = None
+
+    if response["date"]:
+        l_date = response["date"]
+    if response["rates"][to_currency]:
+        conversion_rate = float(response["rates"][to_currency])
+
+    return l_date,conversion_rate
+
     
 
 def get_historical_rate(from_currency, to_currency, from_date, amount):
@@ -84,10 +100,26 @@ def get_historical_rate(from_currency, to_currency, from_date, amount):
     float
         Latest FX conversion rate or None in case of error
     """
+
+    history_url = BASE_URL+ f"/{from_date}?amount={amount}&from={from_currency}&to={to_currency}"
+
+    status_code, response = get_url(history_url)
+
+    if status_code == 0:
+        return None
+    
+    
+    conversion_rate = None
+
+    if response["rates"][to_currency]:
+        conversion_rate = float(response["rates"][to_currency])
+
+    return conversion_rate
+
     
 
 
 
 if __name__ == "__main__":
-    resp = get_currencies_list()
+    resp = get_latest_rates("AUD","USD",50)
     print(resp)
