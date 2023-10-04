@@ -3,7 +3,7 @@ import json
 
 BASE_URL = "https://api.frankfurter.app"
 
-def get_currencies_list():
+def get_currencies_list() -> list:
     """
     Function that will call the relevant API endpoint from Frankfurter in order to get the list of available currencies.
     After the API call, it will perform a check to see if the API call was successful.
@@ -19,6 +19,21 @@ def get_currencies_list():
     list
         List of available currencies or None in case of error
     """
+
+    currency_url = BASE_URL + "/currencies"
+
+    status_code, currency_json = get_url(currency_url)
+
+    if status_code == 0:
+        return None
+    
+    currency_list = [str(key)+" - "+str(value) for key,value in currency_json.items()]
+
+    return currency_list
+
+
+    
+
     
 
 def get_latest_rates(from_currency, to_currency, amount):
@@ -71,3 +86,8 @@ def get_historical_rate(from_currency, to_currency, from_date, amount):
     """
     
 
+
+
+if __name__ == "__main__":
+    resp = get_currencies_list()
+    print(resp)
