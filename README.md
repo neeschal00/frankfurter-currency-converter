@@ -22,14 +22,23 @@ streamlit==1.27.2
 
 **Setup:**
 - CD to the project directory:
+
 ```cd frankfuter-currency-converter```
-- Create a Python Virtual Environment
+
+- Create a Python Virtual Environment:
+
 ```python -m venv venv```
-- Activate the virtual Environment
+
+- Activate the virtual Environment:
+
 ```venv\Scripts\activate```
-or if linux or mac
+
+or if **linux** or **mac**
+
 ```source venv/bin/activate```
-- Install Streamlit package
+
+- Install **Streamlit** package
+
 ```pip install streamlit==1.27.2```
 
 
