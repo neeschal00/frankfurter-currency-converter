@@ -1,8 +1,10 @@
 from api import get_url
+import streamlit as st
 import json
 
 BASE_URL = "https://api.frankfurter.app"
 
+@st.cache_data
 def get_currencies_list() -> list:
     """
     Function that will call the relevant API endpoint from Frankfurter in order to get the list of available currencies.
