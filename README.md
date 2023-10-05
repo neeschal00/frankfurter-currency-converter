@@ -15,7 +15,7 @@ The Features that would be appropriate to implement in the future are:
 Python Version Used: Python 3.10.11
 
 **Libraries:**
-Install Streamlit package which will return all the necesary libraries including http libraries such as requests, pandas, cachetools, etc.
+Install Streamlit package which will return all the necesary libraries including http libraries such as requests, pandas, cachetools, etc.[Streamlit, 2023][1]
 ```streamlit==1.27.2```  
 
 **Setup:**
@@ -57,4 +57,24 @@ streamlit run app.py
 ```
 
 ## Project Structure
+The project is comprised of four Python files where three files with their names represent the respective logic for that portion.
 
+- **app.py:**
+The main application file which consists of necessary code to setup and run the application. It holds the UI components logic and output display logic utilizing the functions from other modules to showcase and display the functionalities seamlessly.
+
+- **README.md:**
+The markdown file which holds the documentation information regarding the application. It consists of steps and procedure to run the application along with a brief discription about the project and its structure.
+
+- **api.py**
+This python file consists of a function which wraps the process of making a request to a certain endpoint with status code and response(i.e. json for api)
+
+- **currency.py**
+This python file holds useful functionalities to calculate the reverse, round the value and create a formatted output to display in the streamlit frontend.
+
+- **frankfurter.py**
+This python file holds the functionalities to display the response from different api.frankfurter.com endpoints based on the given instructions.
+
+
+## Citations:
+
+[1]: https://docs.streamlit.io/library/get-started/installation

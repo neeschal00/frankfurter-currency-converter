@@ -106,7 +106,7 @@ def get_historical_rate(from_currency, to_currency, from_date, amount):
     history_url = BASE_URL+ f"/{from_date}?amount={amount}&from={from_currency}&to={to_currency}"
 
     status_code, response = get_url(history_url)
-
+    
     if status_code == 0:
         return None
     
