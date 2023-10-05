@@ -56,3 +56,5 @@ The **app.py** module consists of all
 streamlit run app.py
 ```
 
+## Project Structure
+

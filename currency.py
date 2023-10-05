@@ -62,4 +62,16 @@ def format_output(date, from_currency, to_currency, rate, amount):
     float
         Inverse of input FX conversion rate
     """
+
+    #round the rate
+    rate = round_rate(rate)
+    converted_amount = round_rate * amount
+    
+    inverse_rate = reverse_rate(rate)
+
+    formatted_output = f"The Conversion rate on {str(date)} From Currency: {from_currency}\
+          To Currency: {to_currency} was {str(rate)}, So. {str(amount)} in {from_currency} \
+          corresponds to {str(converted_amount)} in {to_currency}. The inverse rate was {str(inverse_rate)}"
+    
+    return formatted_output
    
