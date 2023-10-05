@@ -15,8 +15,8 @@ The Features that would be appropriate to implement in the future are:
 Python Version Used: Python 3.10.11
 
 **Libraries:**
-Install Streamlit package which will return all the necesary libraries including http libraries such as requests, pandas, cachetools, etc.[Streamlit, 2023][1]
-```streamlit==1.27.2```  
+Install Streamlit package which will return all the necesary libraries including http libraries such as requests, pandas, cachetools, etc.
+```streamlit==1.27.2```  [Streamlit][1]
 
 **Setup:**
 - CD to the project directory:
@@ -76,5 +76,5 @@ This python file holds the functionalities to display the response from differen
 
 
 ## Citations:
-
 [1]: https://docs.streamlit.io/library/get-started/installation
+- Streamlit Official Documentation "Get-Started Installation" [Source URL](https://docs.streamlit.io/library/get-started/installation)
