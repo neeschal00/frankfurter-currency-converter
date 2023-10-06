@@ -1,10 +1,16 @@
-# frankfurter-currency-converter
+# Frankfurter-currency-converter
 
 ## Description
-The Application in general **converts** the curency from one to another with the usage of frankfurter opensource API.
-<Some of the challenges you faced>
+The Application in general **converts** the curency from one to another with the usage of frankfurter opensource API. The Application has two sections to convert the Currency where **"Get Latest Rate"** is used to convert the given currency to another based on the latest rate available in the API. Whereas the **"Get Historical Rate"** utilizes the Historical Rate based on the selected date to convert. 
+The main app imports other python file as modules where different functionalities are imported with each portion seperated out as modules to utilize it and create the application. The application wraps the frankfurter API responses to modify and only take the usable response which is used to make necessary calculations and displayed by formatting the output.
 
-The Features that would be appropriate to implement in the future are:
+The **Challenges** that was encountered during the development of this application are:
+- Formatting the data types to show the response as a output text in the streamlit section.
+- Wrapping the API Endpoints to fit the requirements required testing and appropriate modifications for each functionalities.
+- Writing a markdown and using it in streamlit along with the README.md itself required verification.
+- Organizing the application based on guidelines required some portion to be made more flexible.
+
+The **Features** that would be appropriate to implement in the **future** are:
 - Showcase the difference between the rate before and current in the application.
 - Use Line Chart to showcase the historical data for a particular currency.
 - Create a currency rates comparison based on historical data.
@@ -78,3 +84,7 @@ This python file holds the functionalities to display the response from differen
 ## Citations:
 [1]: https://docs.streamlit.io/library/get-started/installation
 - Streamlit Official Documentation "Get-Started Installation" [Source URL](https://docs.streamlit.io/library/get-started/installation)
+- Streamlit Official Documentation "St.markdown" [Source URL](https://docs.streamlit.io/library/api-reference/text/st.markdown)
+- Frankfurter API documentation "Documentation" [Source URL](https://www.frankfurter.app/docs/)
+- Jonathan Okah (May 1, 2023) "How I Created a Currency Converter App Using Streamlit" [Source URL](https://blog.finxter.com/how-i-created-a-currency-converter-app-and-a-currency-prediction-app-using-streamlit/)
+
