@@ -5,7 +5,7 @@ from frankfurter import get_currencies_list, get_latest_rates, get_historical_ra
 from currency import format_output
 
 
-st.title("FX Currency Converter")
+st.title("Frankfurter Currency Converter")
 
 
 currencies_list = get_currencies_list()
@@ -34,7 +34,7 @@ else:
 
 
     
-    selected_date = st.date_input("Select a date:", datetime.date.today())
+    selected_date = st.date_input("Select a date:", datetime.date.today(), max_value=datetime.date.today())
     
     
     if st.button("Get Historical Rate"):
